@@ -1,0 +1,29 @@
+﻿@model List<Worker>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ФИО работника</th>
+            <th scope="col">Должность</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th><a class="btn btn-primary" asp-controller="Home" asp-action="WorkerAdd">Добавить нового работника</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int num = 1;
+        }
+        @foreach(var worker in Model)
+        {
+            <tr>
+                <th scope="row">@num</th>
+                <td>@worker.LastName @worker.Name @worker.Patronymic</td>
+                <td>@worker.Post</td>
+                <td><a asp-controller="Home" asp-action="WorkerInfo" asp-route-id="@worker.Id">Открыть полную информацию</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="WorkerDelete" asp-route-id="@worker.Id">Удалить работника</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

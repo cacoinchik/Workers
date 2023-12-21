@@ -33,7 +33,7 @@ namespace Workers
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Workers}/{id?}");
 
             app.Run();
         }

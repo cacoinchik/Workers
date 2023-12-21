@@ -1,0 +1,24 @@
+﻿@model ChildAddViewModel
+
+<form method="post" asp-controller="Home" asp-action="ChildAdd">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="position-relative">
+        <div class="position-absolute top-50 start-50 translate-middle" style="margin-top: 200px">
+
+            <input type="hidden" asp-for="WorkerId"/>
+
+            <label>ФИО ребенка</label>
+            <input asp-for="FIO"/>
+            <span asp-validation-for="FIO"></span>
+            <br />
+
+            <label>Возраст ребенка</label>
+            <input asp-for="Age"/>
+            <span asp-validation-for="Age"></span>
+            <br />
+
+            <input class="btn btn-success" type="submit" value="Сохранить"/>
+        </div>
+    </div>
+</form>

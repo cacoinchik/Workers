@@ -1,0 +1,26 @@
+﻿@model List<Children>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ФИО ребенка</th>
+            <th scope="col">Возраст</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int num = 1;
+        }
+        @foreach (var child in Model)
+        {
+            <tr>
+                <th scope="row">@num</th>
+                <td>@child.FIO</td>
+                <td>@child.Age</td>
+                <td><a asp-controller="Home" asp-action="ChildDelete" asp-route-id="@child.Id">Удалить</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

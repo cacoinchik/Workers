@@ -1,0 +1,33 @@
+﻿@model Worker 
+
+<div style="text-align: center">
+    <h1>Подробная информация о работнике</h1>
+
+    <p>ФИО: @Model.LastName @Model.Name @Model.Patronymic</p>
+    <p>Возраст: @Model.Age</p>
+    <p>Дата рождения: @Model.BirthdayDate.ToString("d")</p>
+    <p>Пол: @Model.Gender</p>
+    <p>Семейное положение: @Model.FamilyStatus</p>
+    <p>Должность: @Model.Post</p>
+    <p>Ученая степень: @Model.Degree</p>
+
+    <h3>Информация о детях</h3>
+    @if(Model.Childrens.Count == 0)
+    {
+        <p>Информация о детях отсутствует</p>
+    }
+    else
+    {
+        @foreach(var child in Model.Childrens)
+        {
+            <div>
+                <p>ФИО: @child.FIO</p>
+                <p>Возраст: @child.Age</p>
+                <a asp-controller="Home" asp-action="ChildDelete" asp-route-id="@child.Id">Удалить</a>
+                <br />
+            </div>
+        }
+    }
+
+    <a class="btn btn-primary" asp-controller="Home" asp-action="ChildAdd" asp-route-id="@Model.Id">Добавить ребенка</a>
+</div>

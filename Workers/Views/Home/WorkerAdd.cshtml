@@ -1,0 +1,62 @@
+﻿@model WorkerAddViewModel
+
+<form method="post" asp-controller="Home" asp-action="WorkerAdd">
+    <div asp-validation-summary="ModelOnly"></div>
+
+   <div class="position-relative">
+        <div class="position-absolute top-50 start-50 translate-middle" style="margin-top: 200px">
+            <label>Фамилия</label>
+            <input asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+            <br />
+
+            <label>Имя</label>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+            <br />
+
+            <label>Отчество</label>
+            <input asp-for="Patronymic" />
+            <span asp-validation-for="Patronymic"></span>
+            <br />
+
+            <label>Пол</label>
+            <select asp-for="Gender">
+                <option>Муж</option>
+                <option>Жен</option>
+            </select>
+            <br />
+
+            <label>Возраст</label>
+            <input asp-for="Age" />
+            <span asp-validation-for="Age"></span>
+            <br />
+
+            <label>Дата рождения</label>
+            <input type="date" asp-for="BirthdayDate" />
+            <span asp-validation-for="BirthdayDate"></span>
+            <br />
+
+            <label>Семейное положение</label>
+            <select asp-for="FamilyStatus">
+                <option>Холост/Не замужем</option>
+                <option>Женат/Замужем</option>
+                <option>Гражданский брак</option>
+            </select>
+            <br />
+
+            <label>Должность</label>
+            <input asp-for="Post" />
+            <span asp-validation-for="Post"></span>
+            <br />
+
+            <label>Ученая степень</label>
+            <input asp-for="Degree" />
+            <span asp-validation-for="Degree"></span>
+            <br />
+
+            <input class="btn btn-success" type="submit" value="Сохранить" />
+       </div>
+   </div>
+
+</form>
